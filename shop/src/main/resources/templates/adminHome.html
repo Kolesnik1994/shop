@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<title>Administrator Web Page</title>
+    
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">IT Shop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" th:href ="@{/admin}" href="#">admin Home</a>
+        <a class="nav-link" th:href = "@{/logout}" href="#">logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="jumbotron text-center">
+    <h1 class="display-4">Welcome back, Admin</h1>
+    <p>Easily manage your data from this admin CMS</p>
+</div>
+
+<br>
+<br>
+<div class="container"> 
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card border-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header">Categories</div>
+  <div class="card-body text-dark">
+    <h5 class="card-title">Manage all categories</h5>
+   <a class="btn btn-outline-primary" type="button" th:href="@{/admin/categories}"> <b> MANAGE </b> </a>
+  </div>
+</div>
+    </div>
+  
+  <div class="col-sm-6">
+    <div class="card border-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header">Products</div>
+  <div class="card-body text-dark">
+    <h5 class="card-title">Manage all products</h5>
+    <a class="btn btn-outline-primary" type="button" th:href="@{/admin/products}"> <b> MANAGE </b> </a>
+  </div>
+</div>
+  </div>
+  </div>
+</div>
+</div>
+
+</body>
+</html>
