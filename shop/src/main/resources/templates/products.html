@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<title>Online Shop</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">IT Shop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" th:href ="@{/admin}" href="#">admin Home</a>
+        <a class="nav-link" th:href = "@{/logout}" href="#">logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+
+<div class="container">
+
+<div class = "row"> 
+<div class = "col-lg-3"> 
+<a th:href = "@{/admin/products/add}" class="btn btn-primary btn-sm mb-3"> Add Category </a>
+
+</div>
+</div>
+
+
+
+<table class = "table">
+<thead>
+    <tr>
+      <th scope="col">SN</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">Preview</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+  <tr th:each = "product, iStat :${products}"> <th scope="row" th:text="${iStat.index + 1}">1</th>
+  <td th:text = "${product.name}">  </td>
+  <td th:text = "${product.category.name}">  </td>
+  <td> <img src="" height="100px" width="100px"  th:src="@{${'/img/' + product.imageName}}"> </td>
+  <td>  <a th:href = "@{/admin/product/update/{id}(id=${product.id})}" 
+   class ="btn btn-success"> Update </a>
+  
+         <a th:href = "@{/admin/product/delete/{id}(id=${product.id})}" 
+   class ="btn btn-danger"> Delete </a>
+         
+   </td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+
+
+
+</body>
+</html>
