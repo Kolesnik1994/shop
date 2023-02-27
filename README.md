@@ -1,2 +1,3 @@
 # shop
-Shop-online CRUD + admin + Login +(Spring boot, Spring Security, Spring JPA, MySQL, Thymeleaf);
+Application Shop-online, Role Authentication ( Spring Security, Spring JPA, MySQL, Thymeleaf );
+
